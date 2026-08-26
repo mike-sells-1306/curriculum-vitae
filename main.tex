@@ -1,0 +1,91 @@
+%%%%%%%%%%    PREAMBLE    %%%%%%%%%%
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+
+% Packages
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{changepage}
+\usepackage[expansion=false]{microtype}
+
+% Page Specification
+\geometry{a4paper, top=1.4cm, bottom=1.5cm, left=1.6cm, right=1.6cm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\hypersetup{hidelinks}
+
+% One consistent rule for every bullet list in the document: small,
+% tight, close to the label, and indented just enough to read as
+% "nested under" the line above -- never a half-inch dead zone.
+\setlist[itemize]{
+  leftmargin=1.15em,
+  labelsep=0.5em,
+  topsep=3pt,
+  itemsep=1.5pt,
+  parsep=0pt
+}
+\renewcommand{\labelitemi}{\textendash}
+
+% Formatting
+
+\titleformat{\section}
+  {\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\titlerule]
+
+\titlespacing*{\section}
+  {0pt}
+  {0.3\baselineskip}
+  {0.3\baselineskip}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}
+  {}
+  {0pt}
+  {}
+
+\titlespacing*{\subsection}
+  {0pt}
+  {0pt}
+  {1pt}
+
+% Sub-content (bullets, context lines) under a role/project heading.
+% No left-shift here -- headings, context lines, and body text all sit
+% flush left; only the itemize's own leftmargin (above) creates indent.
+% This is what keeps Employment and Projects visually identical.
+\newenvironment{subs}
+  {\small\par\vspace{1pt}}
+  {\par\vspace{1pt}}
+
+
+\author{Michael Sells}
+\date{January 2026}
+
+
+\begin{document}
+
+%%%%%%%%%%%    Header    %%%%%%%%%%%
+\input{Sections/head}
+
+%%%%%%%   Personal Overview   %%%%%%%
+\input{Sections/personal-overveiw}
+
+%%%%%%%%%%   Employment   %%%%%%%%%%
+\input{Sections/employment-history}
+
+%%%%%%%%%%   Education   %%%%%%%%%%%
+\input{Sections/education}
+
+%%%%%%%%%%%   Projects   %%%%%%%%%%%%
+\input{Sections/projects}
+
+%%%%%%%%%%%%   Skills   %%%%%%%%%%%%%
+\input{Sections/skills}
+
+
+\end{document}
